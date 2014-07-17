@@ -13,7 +13,7 @@ dependencies {
 
 group = 'com.wiredforcode'
 archivesBaseName = 'gradle-spawn-plugin'
-version = '0.5.2'
+version = '0.5.3'
 
 apply plugin: 'distribution'
 
@@ -28,7 +28,7 @@ distributions {
 
 ext {
     bintrayBaseUrl = 'https://api.bintray.com/maven'
-    bintrayUsername = 'vermeulen-mp'
+    bintrayUsername = 'kramer'
     bintrayRepository = 'gradle-plugins'
     bintrayPackage = 'gradle-spawn-plugin'
 }
@@ -60,10 +60,15 @@ publishing {
                 license.appendNode('url', 'http://www.apache.org/licenses/LICENSE-2.0.txt')
                 license.appendNode('distribution', 'repo')
 
-                def developer = root.appendNode('developers').appendNode('developer')
-                developer.appendNode('id', 'vermeulen.mp')
-                developer.appendNode('name', 'Marco Vermeulen')
-                developer.appendNode('email', 'vermeulen.mp@gmail.com')
+                def developers = root.appendNode('developers')
+                def developer1 = developers.appendNode('developer')
+                developer1.appendNode('id', 'kramer')
+                developer1.appendNode('name', 'Cihat Keser')
+                developer1.appendNode('email', 'info@cihatkeser.com')
+
+                def developer2 = developers.appendNode('developer')
+                developer2.appendNode('name', 'Marco Vermeulen')
+                developer2.appendNode('email', 'vermeulen.mp@gmail.com')
             }
 
         }
